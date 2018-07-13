@@ -91,7 +91,7 @@ Without authentication:
 
 With authentication:
 
-    root@localhost:/home/c9sdk# node server.js -w /var/www/my_web_domain/html/ --port 3131 --listen 0.0.0.0 --auth test_user:test:password
+    root@localhost:/home/c9sdk# node server.js -w /var/www/my_web_domain/html/ --port 3131 --listen 0.0.0.0 --auth test_user:test_password
     Starting standalone
     Connect server listening at http://my_server_ip_address:3131
     Using basic authentication
