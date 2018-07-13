@@ -48,6 +48,8 @@ Start the Cloud9 as follows:
 
     node server.js
 
+Now visit [http://localhost:8181/ide.html](http://localhost:8181/ide.html) to load Cloud9.
+
 The following options can be used:
 
     --settings       Settings file to use
@@ -65,7 +67,38 @@ The following options can be used:
     --collab         Whether to enable collab.
     --no-cache       Don't use the cached version of CSS
 
-Now visit [http://localhost:8181/ide.html](http://localhost:8181/ide.html) to load Cloud9.
+Cloud9 will not listen to any IP other than localhost i.e. 127.0.0.1 IF authentication isn't enabled as a security feature.
+
+Without authentication:
+
+    root@localhost:~/c9sdk# node server.js -w /var/www/my_web_domain/html/ --port 3131 --listen 0.0.0.0 -a
+    Starting standalone
+    Authentication is required when not running on localhost.
+    If you would like to expose this service to other hosts or the Internet
+    at large, please specify -a user:pass to set a username and password
+    (or use -a : to force no login).
+    Use --listen localhost to only listen on the localhost interface and
+    and suppress this message.
+
+    Warning: running Cloud9 without using HTTP authentication.
+    Run using --listen localhost instead to only expose Cloud9 to localhost,
+    or use -a username:password to setup HTTP authentication
+
+    Connect server listening at http://127.0.0.1:3131
+    CDN: version standalone initialized /root/c9sdk/build
+    Started '/root/c9sdk/configs/standalone' with config 'standalone'!
+    Cloud9 is up and running
+
+With authentication:
+
+    root@localhost:~/c9sdk# node server.js -w /var/www/my_web_domain/html/ --port 3131 --listen 0.0.0.0 --auth test_user:test:password
+    Starting standalone
+    Connect server listening at http://my_server_ip_address:3131
+    Using basic authentication
+    CDN: version standalone initialized /root/c9sdk/build
+    Started '/root/c9sdk/configs/standalone' with config 'standalone'!
+    Cloud9 is up and running
+
 
 #### Running Tests ####
 
