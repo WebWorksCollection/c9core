@@ -67,11 +67,11 @@ The following options can be used:
     --collab         Whether to enable collab.
     --no-cache       Don't use the cached version of CSS
 
-Cloud9 will not listen to any IP other than localhost i.e. 127.0.0.1 IF authentication isn't enabled as a security feature.
+Cloud9 will not listen to any IP other than localhost(127.0.0.1) IF authentication isn't enabled, as a security feature.
 
 Without authentication:
 
-    root@localhost:~/c9sdk# node server.js -w /var/www/my_web_domain/html/ --port 3131 --listen 0.0.0.0 -a
+    root@localhost:/home/c9sdk# node server.js -w /var/www/my_web_domain/html/ --port 3131 --listen 0.0.0.0 -a
     Starting standalone
     Authentication is required when not running on localhost.
     If you would like to expose this service to other hosts or the Internet
@@ -85,18 +85,18 @@ Without authentication:
     or use -a username:password to setup HTTP authentication
 
     Connect server listening at http://127.0.0.1:3131
-    CDN: version standalone initialized /root/c9sdk/build
-    Started '/root/c9sdk/configs/standalone' with config 'standalone'!
+    CDN: version standalone initialized /home/c9sdk/build
+    Started '/home/c9sdk/configs/standalone' with config 'standalone'!
     Cloud9 is up and running
 
 With authentication:
 
-    root@localhost:~/c9sdk# node server.js -w /var/www/my_web_domain/html/ --port 3131 --listen 0.0.0.0 --auth test_user:test:password
+    root@localhost:/home/c9sdk# node server.js -w /var/www/my_web_domain/html/ --port 3131 --listen 0.0.0.0 --auth test_user:test:password
     Starting standalone
     Connect server listening at http://my_server_ip_address:3131
     Using basic authentication
-    CDN: version standalone initialized /root/c9sdk/build
-    Started '/root/c9sdk/configs/standalone' with config 'standalone'!
+    CDN: version standalone initialized /home/c9sdk/build
+    Started '/home/c9sdk/configs/standalone' with config 'standalone'!
     Cloud9 is up and running
 
 
